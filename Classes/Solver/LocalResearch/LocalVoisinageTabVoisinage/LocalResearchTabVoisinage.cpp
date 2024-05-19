@@ -1,8 +1,13 @@
 #include "LocalResearchTabVoisinage.h"
 
-LocalResearchTabVoisinage::LocalResearchTabVoisinage(std::vector<Voisinage> tabVoisinage)
-        : tabVoisinage(std::move(tabVoisinage)) {}
+
+LocalResearchTabVoisinage::LocalResearchTabVoisinage(const std::vector<Voisinage *> &tabVoisinage)
+        : tabVoisinage(tabVoisinage) {}
 
 void LocalResearchTabVoisinage::operator()(Solution &sol, Eval &eval) {
-    sol = getAmeliorante(sol, std::move(tabVoisinage), eval);
+    //sol = getAmeliorante(sol, tabVoisinage, eval);
+}
+
+Solution LocalResearchTabVoisinage::getAmeliorante(Solution &sol, Voisinage &voisin, Eval &eval) {
+    return algorithmeDescente(sol, voisin, eval);
 }

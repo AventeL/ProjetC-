@@ -20,16 +20,21 @@ int main() {
     std::cout << eval(solution) << std::endl;
     std::cout << "----------------" << std::endl;
 
-    Reinsertion voisin;
-    std::vector<Voisinage> tabVoisinage = {};
-    tabVoisinage.push_back(voisin);
-    LocalResearchVoisinageVariable localResearch(tabVoisinage);
+    Reinsertion reinsertion;
+    Echange echange;
+    TwoOpt twoOpt;
+
+    std::vector<Voisinage *> voisinages = {&reinsertion, &echange, &twoOpt};
+
+    LocalResearchVoisinageVariable localResearch(voisinages);
     localResearch(solution, eval);
+
     std::cout << "Apres : " << eval(solution) << std::endl;
     std::cout << solution << std::endl;
 
     return 0;
 }
+
 /*Echange
  * 3258.1
 6 9 0 5 8 3 7 1 4 2
