@@ -1,4 +1,5 @@
 #include "LocalResearchBase.h"
+#include "LocalResarchVoisinage/LocalResearchVoisinage.h"
 
 Solution LocalResearchBase::algorithmeDescente(Solution &sol, Voisinage &voisinage, Eval &eval) {
     Solution solution = sol;
@@ -13,3 +14,4 @@ Solution LocalResearchBase::algorithmeDescente(Solution &sol, Voisinage &voisina
     }
     return meilleureSolution;
 }
+
