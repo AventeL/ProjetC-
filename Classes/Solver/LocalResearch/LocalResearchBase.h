@@ -4,6 +4,7 @@
 #include "../Solver.h"
 #include "../../Voisinage/Voisinage.h"
 
+
 class LocalResearchBase : public Solver {
 public:
     virtual void operator()(Solution &sol, Eval &eval) override = 0;

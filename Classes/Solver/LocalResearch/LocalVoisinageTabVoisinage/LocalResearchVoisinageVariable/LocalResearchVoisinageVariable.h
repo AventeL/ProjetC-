@@ -10,7 +10,9 @@ class LocalResearchVoisinageVariable : public LocalResearchTabVoisinage {
 public:
     LocalResearchVoisinageVariable(const std::vector<Voisinage *> &tabVoisinages);
 
-    Solution getAmeliorante(Solution &sol, const std::vector<Voisinage *> &tabVoisinages, Eval &eval) override;
+    Solution researchLocalVoisinage(Solution &sol,  std::vector<Voisinage *> &tabVoisinages, Eval &eval) override;
+
+
 };
 
 #endif

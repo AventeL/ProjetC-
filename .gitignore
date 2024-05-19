@@ -1,0 +1,13 @@
+# Ignorer les fichiers générés par les builds
+/build/
+/bin/
+/Debug/
+/Release/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignorer les fichiers temporaires
+*.tmp
+*.temp

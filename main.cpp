@@ -24,11 +24,13 @@ int main() {
     Echange echange;
     TwoOpt twoOpt;
 
-    std::vector<Voisinage *> voisinages = {&reinsertion, &echange, &twoOpt};
-
+    /*std::vector<Voisinage *> voisinages = {&reinsertion, &echange, &twoOpt};
     LocalResearchVoisinageVariable localResearch(voisinages);
-    localResearch(solution, eval);
 
+    localResearch(solution, eval);*/
+
+    LocalResearchBestAmeliorante localResearch(reinsertion);
+    localResearch(solution, eval);
     std::cout << "Apres : " << eval(solution) << std::endl;
     std::cout << solution << std::endl;
 

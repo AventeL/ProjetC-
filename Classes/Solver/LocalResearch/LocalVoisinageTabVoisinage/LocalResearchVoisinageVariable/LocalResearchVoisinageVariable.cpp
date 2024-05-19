@@ -1,10 +1,12 @@
+#include <iostream>
 #include "LocalResearchVoisinageVariable.h"
+#include "../../../../Voisinage/2opt/TwoOpt.h"
 
-Solution LocalResearchVoisinageVariable::getAmeliorante(Solution &sol, const std::vector<Voisinage *> &tabVoisinages,
+Solution LocalResearchVoisinageVariable::researchLocalVoisinage(Solution &sol, std::vector<Voisinage *> &tabVoisinages,
                                                         Eval &eval) {
     Solution meilleure_solution = sol;
     double meilleure_distance = eval(sol);
-    for (const auto &tabVoisinage: tabVoisinages) {
+    for (auto &tabVoisinage: tabVoisinages) {
         Solution solution = algorithmeDescente(sol, *tabVoisinage, eval);
         double distance_solution = eval(solution);
         if (distance_solution < meilleure_distance) {

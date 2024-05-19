@@ -9,7 +9,7 @@ class LocalResearchVoisinage : public LocalResearchBase {
 public:
     LocalResearchVoisinage(Voisinage &voisinage);
 
-    virtual Solution getAmeliorante(Solution &sol, Voisinage &voisinage, Eval &eval) = 0;
+    virtual Solution getAmeliorante(Solution &sol, Voisinage &voisinage, Eval &eval) override = 0;
 
     void operator()(Solution &sol, Eval &eval) override;
 

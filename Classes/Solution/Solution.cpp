@@ -2,6 +2,7 @@
 #include <iostream>
 #include <random>
 #include <algorithm>
+#include <ctime>
 
 Solution::Solution(Instance instance) {
     villes.resize(instance.getVilles().size());

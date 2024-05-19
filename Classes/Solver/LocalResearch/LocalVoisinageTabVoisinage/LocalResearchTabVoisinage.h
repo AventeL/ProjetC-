@@ -9,11 +9,11 @@ class LocalResearchTabVoisinage : public LocalResearchBase {
 public:
     LocalResearchTabVoisinage(const std::vector<Voisinage *> &tabVoisinage);
 
-    virtual Solution getAmeliorante(Solution &sol, const std::vector<Voisinage *> &tabVoisinages, Eval &eval) = 0;
+    Solution getAmeliorante(Solution &sol, Voisinage &voisinage, Eval &eval) override;
 
-    Solution getAmeliorante(Solution &sol, Voisinage &voisin, Eval &eval) override;
+    virtual Solution researchLocalVoisinage(Solution &sol, std::vector<Voisinage *> &tabVoisinages, Eval &eval) = 0;
 
-    void operator()(Solution &sol, Eval &eval) override;
+    void operator()(Solution &sol, Eval &eval)  override;
 
 protected:
     std::vector<Voisinage *> tabVoisinage;
