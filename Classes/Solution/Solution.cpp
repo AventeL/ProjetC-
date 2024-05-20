@@ -1,4 +1,5 @@
 #include "Solution.h"
+#include "../Voisinage/Voisinage.h"
 #include <iostream>
 #include <random>
 #include <algorithm>
@@ -60,6 +61,17 @@ void Solution::reverse(int a, int b) {
         swap(a, b);
         a++;
         b--;
+    }
+}
+
+void Solution::disturb(int force) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    Voisinage *voisinage = Voisinage::getRandomVoisinage();
+    std::uniform_int_distribution<> dis(0, voisinage->getNumberOfAction(*this) - 1);
+    for (auto i = 0; i < force; i++) {
+        int randomIndex = dis(gen);
+        this->villes = voisinage->doActionByIndex(*this, randomIndex).villes;
     }
 }
 

@@ -10,9 +10,11 @@
 #include "Classes/Solver/LocalResearch/LocalResarchVoisinage/LocalResearchRandomAmeliorante/LocalResearchRandomAmeliorante.h"
 #include "Classes/Solver/LocalResearch/LocalVoisinageTabVoisinage/LocalResearchTabVoisinage.h"
 #include "Classes/Solver/LocalResearch/LocalVoisinageTabVoisinage/LocalResearchVoisinageVariable/LocalResearchVoisinageVariable.h"
+#include "Classes/Solver/Greedy/Greedy.h"
+#include "Classes/Solver/Random/Random.h"
 
 int main() {
-    Instance instanceTsp("../Instances/france_10.tsp");
+    Instance instanceTsp("../Instances/france_50.tsp");
     Solution solution(instanceTsp);
 
     std::cout << "Base : " << solution << std::endl;
@@ -24,13 +26,12 @@ int main() {
     Echange echange;
     TwoOpt twoOpt;
 
-    /*std::vector<Voisinage *> voisinages = {&reinsertion, &echange, &twoOpt};
-    LocalResearchVoisinageVariable localResearch(voisinages);
-
-    localResearch(solution, eval);*/
-
+    std::vector<Voisinage *> voisinages = {&reinsertion, &echange, &twoOpt};
+    //LocalResearchVoisinageVariable localResearch(voisinages);
+    //localResearch(solution, eval);
     LocalResearchBestAmeliorante localResearch(reinsertion);
     localResearch(solution, eval);
+
     std::cout << "Apres : " << eval(solution) << std::endl;
     std::cout << solution << std::endl;
 

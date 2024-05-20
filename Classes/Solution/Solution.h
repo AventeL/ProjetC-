@@ -25,6 +25,8 @@ public:
     void shift(int a, int b);
 
     void reverse(int a, int b);
+
+    void disturb(int force);
 };
 
 std::ostream &operator<<(std::ostream &os, const Solution &sol);

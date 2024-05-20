@@ -1,3 +1,5 @@
+#include <iostream>
+#include <limits>
 #include "LocalResearchBase.h"
 #include "LocalResarchVoisinage/LocalResearchVoisinage.h"
 
@@ -5,7 +7,7 @@ Solution LocalResearchBase::algorithmeDescente(Solution &sol, Voisinage &voisina
     Solution solution = sol;
     double distanceSolution = eval(sol);
     Solution meilleureSolution = sol;
-    double meilleureDistance = RAND_MAX;
+    double meilleureDistance = std::numeric_limits<double>::max();
     while (meilleureDistance > distanceSolution) {
         meilleureSolution = solution;
         meilleureDistance = distanceSolution;
