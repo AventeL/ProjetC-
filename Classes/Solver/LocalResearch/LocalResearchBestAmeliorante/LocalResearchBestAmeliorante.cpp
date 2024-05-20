@@ -15,4 +15,8 @@ Solution LocalResearchBestAmeliorante::getAmeliorante(Solution &sol, Voisinage &
     return meilleureSolution;
 }
 
-LocalResearchBestAmeliorante::LocalResearchBestAmeliorante(Voisinage &voisinage) : LocalResearchVoisinage(voisinage) {}
+LocalResearchBestAmeliorante::LocalResearchBestAmeliorante(Voisinage &voisinage) : voisinage(voisinage) {}
+
+void LocalResearchBestAmeliorante::operator()(Solution &sol, Eval &eval) {
+    sol = algorithmeDescente(sol, voisinage, eval);
+}

@@ -1,14 +1,17 @@
 #ifndef PROJET_LOCALRESEARCHBESTAMELIORANTE_H
 #define PROJET_LOCALRESEARCHBESTAMELIORANTE_H
 
-#include "../LocalResearchVoisinage.h"
 
-class LocalResearchBestAmeliorante : public LocalResearchVoisinage {
+#include "../LocalResearchBase.h"
+
+class LocalResearchBestAmeliorante : public LocalResearchBase {
 public:
     explicit LocalResearchBestAmeliorante(Voisinage &voisinage);
 
     Solution getAmeliorante(Solution &sol, Voisinage &voisinage, Eval &eval) override;
-};
 
+protected:
+    Voisinage &voisinage;
+};
 
 #endif

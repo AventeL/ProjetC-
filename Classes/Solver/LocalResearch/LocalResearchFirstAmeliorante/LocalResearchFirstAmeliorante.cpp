@@ -14,5 +14,4 @@ Solution LocalResearchFirstAmeliorante::getAmeliorante(Solution &sol, Voisinage 
     return meilleureSolution;
 }
 
-LocalResearchFirstAmeliorante::LocalResearchFirstAmeliorante(Voisinage &voisinage) : LocalResearchVoisinage(
-        voisinage) {}
+LocalResearchFirstAmeliorante::LocalResearchFirstAmeliorante(Voisinage &voisinage) : voisinage(voisinage) {}

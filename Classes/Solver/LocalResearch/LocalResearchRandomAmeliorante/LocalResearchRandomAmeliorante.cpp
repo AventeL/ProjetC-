@@ -1,7 +1,6 @@
 #include "LocalResearchRandomAmeliorante.h"
 
-LocalResearchRandomAmeliorante::LocalResearchRandomAmeliorante(Voisinage &voisinage) : LocalResearchVoisinage(
-        voisinage) {}
+LocalResearchRandomAmeliorante::LocalResearchRandomAmeliorante(Voisinage &voisinage) : voisinage(voisinage) {}
 
 Solution LocalResearchRandomAmeliorante::getAmeliorante(Solution &sol, Voisinage &voisinage, Eval &eval) {
     Solution meilleureSolution = sol;
